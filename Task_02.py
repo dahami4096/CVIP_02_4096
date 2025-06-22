@@ -1,3 +1,4 @@
+# region_growing_segmentation.py
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
@@ -48,8 +49,9 @@ def display_results(original, segmented):
     plt.show()
 
 if __name__ == "__main__":
+   
     image = cv2.imread('sample.jpg', cv2.IMREAD_GRAYSCALE) if cv2.imread('sample.jpg') is not None else create_test_image()
-    seeds = [(100, 100), (150, 150)] 
+    seeds = [(100, 100)] 
     threshold = 20
     segmented_region = region_growing(image, seeds, threshold)
     display_results(image, segmented_region)
